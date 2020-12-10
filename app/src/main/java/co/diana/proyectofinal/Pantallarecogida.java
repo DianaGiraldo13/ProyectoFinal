@@ -100,7 +100,7 @@ public class Pantallarecogida extends AppCompatActivity {
                        // Log.e("TAG", String.valueOf(Seleccionados.size()));
 
                         Intent intent= new Intent(this, Pantalladonacionrealizada.class);
-                        //startActivity(intent);
+                        startActivity(intent);
                     }
 
                 }
