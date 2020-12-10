@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "57447224352",
+    "firebase_url": "https://proyectofinaleco-7540d-default-rtdb.firebaseio.com",
+    "project_id": "proyectofinaleco-7540d",
+    "storage_bucket": "proyectofinaleco-7540d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:57447224352:android:3433385d532dad818b5845",
+        "android_client_info": {
+          "package_name": "co.diana.proyectofinal"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "57447224352-211uck5l7467m1qirfd4010s26juib9q.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "co.diana.proyectofinal",
+            "certificate_hash": "e8e5983b519975147914e7509a57ba00ce279254"
+          }
+        },
+        {
+          "client_id": "57447224352-ec0rrqs4738mqop27tnlknvgnqlsq690.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBoYaceu-3Y5_HH6mrDqQudurDSCZ8hETo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "57447224352-ec0rrqs4738mqop27tnlknvgnqlsq690.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
