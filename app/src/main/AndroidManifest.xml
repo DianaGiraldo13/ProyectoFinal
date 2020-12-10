@@ -9,6 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".Pantallausuario"></activity>
         <activity android:name=".intro">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -29,10 +30,8 @@
         <activity android:name=".Pantalladinero" />
         <activity android:name=".Pantalladonar" />
         <activity android:name=".PantalladeContribuir" />
-        <activity android:name=".MainActivity"></activity>
-        <activity android:name=".pantallas.Inicio">
-
-        </activity>
+        <activity android:name=".MainActivity" />
+        <activity android:name=".pantallas.Inicio"></activity>
     </application>
 
 </manifest>

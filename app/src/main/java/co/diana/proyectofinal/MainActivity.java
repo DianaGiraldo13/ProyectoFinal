@@ -7,6 +7,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.widget.ImageView;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -24,14 +25,24 @@ public class MainActivity extends AppCompatActivity {
     private FirebaseDatabase db;
     private FirebaseAuth auth;
     private String id;
+    private ImageView imageViewbarra;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        imageViewbarra=findViewById(R.id.imageViewbarra);
         auth = FirebaseAuth.getInstance();
         db = FirebaseDatabase.getInstance();
+
+        imageViewbarra.setOnClickListener(
+                (v)->{
+                    Intent intent= new Intent(this,Pantallausuario.class);
+                    startActivity(intent);
+                }
+        );
 
         if(auth.getCurrentUser()== null){
 
