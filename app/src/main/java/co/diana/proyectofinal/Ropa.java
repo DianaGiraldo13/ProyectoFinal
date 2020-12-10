@@ -11,10 +11,11 @@ public class Ropa {
     String estado;
     String horaderecogida;
     String fechaderecogida;
+    String inforopa;
 
     private ArrayList<String> informacionselecciondetipoycantidadderopa;
 
-    public Ropa(String idusuario, String nombre, String id, String tipo, String direccion, String estado, String horaderecogida, String fechaderecogida) {
+    public Ropa(String idusuario, String nombre, String id, String tipo, String direccion, String estado, String horaderecogida, String fechaderecogida,String inforopa) {
         this.idusuario = idusuario;
         this.nombre = nombre;
         this.id = id;
@@ -23,10 +24,20 @@ public class Ropa {
         this.estado = estado;
         this.horaderecogida = horaderecogida;
         this.fechaderecogida = fechaderecogida;
+        this.inforopa=inforopa;
 
     }
+
     public Ropa(){
 
+    }
+
+    public String getInforopa() {
+        return inforopa;
+    }
+
+    public void setInforopa(String inforopa) {
+        this.inforopa = inforopa;
     }
 
     public String getIdusuario() {

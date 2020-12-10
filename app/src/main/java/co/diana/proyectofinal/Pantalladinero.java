@@ -10,6 +10,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.UUID;
@@ -27,6 +28,7 @@ public class Pantalladinero extends AppCompatActivity {
     private Intent intent;
     private int monto;
     private FirebaseDatabase database;
+    private FirebaseAuth auth;
 
 
 
@@ -36,7 +38,7 @@ public class Pantalladinero extends AppCompatActivity {
         setContentView(R.layout.activity_pantalladinero);
 
 
-
+        auth=FirebaseAuth.getInstance();
         database=FirebaseDatabase.getInstance();
         intent=getIntent();
         Donar=findViewById(R.id.Donar);
@@ -59,7 +61,7 @@ public class Pantalladinero extends AppCompatActivity {
                     }
                     else{
                         String id= UUID.randomUUID().toString();
-                        Dinero dinero= new Dinero("1234",editTextNombre.getText().toString(),id, tipo,monto,"","pendiente");
+                        Dinero dinero= new Dinero(auth.getCurrentUser().getUid(),editTextNombre.getText().toString(),id, tipo,monto,"","pendiente");
                         database.getReference().child("donaciones").child("dinero").child(tipo+"/"+id).setValue(dinero);
                         Intent intent= new Intent(this,Pantalladonacionrealizada.class);
                         startActivity(intent);
