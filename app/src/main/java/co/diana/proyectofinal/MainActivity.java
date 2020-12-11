@@ -32,14 +32,24 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private FirebaseDatabase db;
     private FirebaseAuth auth;
     private String id;
+    private ImageView imageViewbarra;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        imageViewbarra=findViewById(R.id.imageViewbarra);
         auth = FirebaseAuth.getInstance();
         db = FirebaseDatabase.getInstance();
+
+        imageViewbarra.setOnClickListener(
+                (v)->{
+                    Intent intent= new Intent(this,Pantallausuario.class);
+                    startActivity(intent);
+                }
+        );
 
         if(auth.getCurrentUser()== null){
 

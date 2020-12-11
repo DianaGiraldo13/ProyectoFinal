@@ -14,9 +14,15 @@
         <activity android:name=".pantallas.cambiarContrasenna"></activity>
         <activity android:name=".pantallas.donacionesRecogidas" />
         <activity android:name=".pantallas.notificaciones" />
-        <activity android:name=".pantallausuario" />
         <activity android:name=".pantallas.cambioContrasenna" />
-        <activity android:name=".pantallas.intro"></activity>
+        <activity android:name=".Pantallausuario"></activity>
+        <activity android:name=".intro">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity android:name=".pantallas.Servicios" />
         <activity android:name=".pantallas.solicitudRealizada" />
         <activity android:name=".pantallas.InfoEmployee" />

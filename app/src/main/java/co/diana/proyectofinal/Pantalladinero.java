@@ -39,8 +39,6 @@ public class Pantalladinero extends AppCompatActivity implements View.OnClickLis
     private ImageView servicioButton, recogerButton, perfilButton, homeButton;
 
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,12 +50,9 @@ public class Pantalladinero extends AppCompatActivity implements View.OnClickLis
         homeButton = findViewById(R.id.homeButton);
 
         servicioButton.setOnClickListener(this);
-
         recogerButton.setOnClickListener(this);
         perfilButton.setOnClickListener(this);
         homeButton.setOnClickListener(this);
-
-
         auth=FirebaseAuth.getInstance();
         database=FirebaseDatabase.getInstance();
         intent=getIntent();
@@ -99,6 +94,8 @@ public class Pantalladinero extends AppCompatActivity implements View.OnClickLis
                                 hora);
 
                         database.getReference().child("donaciones").child("dinero").child(tipo+"/"+id).setValue(donacion);
+                        Dinero dinero= new Dinero(auth.getCurrentUser().getUid(),editTextNombre.getText().toString(),id, tipo,monto,"","pendiente");
+                        database.getReference().child("donaciones").child("dinero").child(tipo+"/"+id).setValue(dinero);
                         Intent intent= new Intent(this,Pantalladonacionrealizada.class);
                         startActivity(intent);
                     }

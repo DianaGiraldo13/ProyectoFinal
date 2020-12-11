@@ -59,7 +59,6 @@ public class Pantallarecogida extends AppCompatActivity implements View.OnClickL
         recogerButton.setOnClickListener(this);
         perfilButton.setOnClickListener(this);
         homeButton.setOnClickListener(this);
-
         auth=FirebaseAuth.getInstance();
         database.getReference().child("users").child(auth.getCurrentUser().getUid()).addValueEventListener(
                 new ValueEventListener() {
@@ -88,9 +87,6 @@ public class Pantallarecogida extends AppCompatActivity implements View.OnClickL
         Seleccionados=intent.getStringArrayListExtra("Seleccionado");
         Log.e("TAG", String.valueOf(intent.getStringArrayListExtra("Seleccionado")));
 
-
-
-
         donar.setOnClickListener(
                 (v)->{
                     if (editTextDia.getText().toString().isEmpty()||editTextDireccion.getText().toString().isEmpty()||editTexthoramin.getText().toString().isEmpty()||editTexthora.getText().toString().isEmpty()||editTextMes.getText().toString().isEmpty()){
@@ -107,6 +103,9 @@ public class Pantallarecogida extends AppCompatActivity implements View.OnClickL
                             Ropa ropa= new Ropa(auth.getCurrentUser().getUid(),user.getNombre(),id,"Ropa",direccion,"en espera",horaentrega,fechadeentrega,Seleccionados.get(i));
                             Ropas.add(ropa);
                         }
+                      
+                        //Log.e("TAG", String.valueOf(Ropas.size()));
+                       // Log.e("TAG", String.valueOf(Seleccionados.size()));
 
 
                         for (int i=0;i<Ropas.size();i++){
