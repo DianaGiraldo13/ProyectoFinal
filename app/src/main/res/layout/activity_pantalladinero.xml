@@ -7,6 +7,71 @@
     android:background="#FFFFFF"
     tools:context=".Pantalladinero">
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="0dp"
+        android:layout_height="80dp"
+        android:background="#F1F1F1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ImageView
+            android:id="@+id/donacionbutton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="34dp"
+            android:layout_marginLeft="34dp"
+            android:layout_marginTop="15dp"
+            app:layout_constraintStart_toEndOf="@+id/serviciobutton"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/donarcolor" />
+
+        <ImageView
+            android:id="@+id/homeButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="15dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/homestrok" />
+
+        <ImageView
+            android:id="@+id/perfilbutton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginRight="30dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/perfilstrok" />
+
+        <ImageView
+            android:id="@+id/recolectarbutton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="34dp"
+            android:layout_marginLeft="34dp"
+            android:layout_marginTop="15dp"
+            app:layout_constraintStart_toEndOf="@+id/donacionbutton"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/recolectastrok" />
+
+        <ImageView
+            android:id="@+id/serviciobutton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="34dp"
+            android:layout_marginLeft="34dp"
+            android:layout_marginTop="15dp"
+            app:layout_constraintStart_toEndOf="@+id/homeButton"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/serviciostrok" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
     <Button
         android:id="@+id/Donar"
         android:layout_width="350dp"
@@ -21,23 +86,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextmonto"
         app:layout_constraintVertical_bias="0.418" />
-
-    <ImageView
-        android:id="@+id/imageView9"
-        android:layout_width="414dp"
-        android:layout_height="107dp"
-        android:layout_marginStart="3dp"
-        android:layout_marginLeft="3dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="3dp"
-        android:layout_marginRight="3dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.555"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Infraestructura"
-        app:layout_constraintVertical_bias="1.0"
-        app:srcCompat="@drawable/appnav" />
 
     <TextView
         android:id="@+id/textView16"
@@ -62,7 +110,8 @@
         android:layout_marginRight="75dp"
         android:background="@drawable/cuadritodonar"
         android:ems="10"
-        android:inputType="textPersonName"
+        android:hint="00"
+        android:inputType="textPersonName|numberDecimal"
         android:padding="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
@@ -92,6 +141,7 @@
         android:layout_marginRight="210dp"
         android:background="@drawable/cuadritodonar"
         android:ems="10"
+        android:hint="Año"
         android:inputType="textPersonName"
         android:padding="10dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -108,6 +158,7 @@
         android:layout_marginRight="265dp"
         android:background="@drawable/cuadritodonar"
         android:ems="10"
+        android:hint="Dia"
         android:inputType="textPersonName"
         android:padding="10dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -136,6 +187,7 @@
         android:layout_marginTop="10dp"
         android:background="@drawable/cuadritodonar"
         android:ems="10"
+        android:hint="0193839292"
         android:inputType="textPersonName"
         android:padding="10dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -230,7 +282,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="$40.000"
+        android:textColor="#08596C"
         android:textSize="18sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView16" />

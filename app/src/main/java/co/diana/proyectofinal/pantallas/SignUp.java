@@ -21,7 +21,6 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener{
 
     private EditText name;
     private EditText email;
-    private EditText tel;
     private TextView login;
     private EditText password;
     private EditText confirmPassword;
@@ -38,7 +37,7 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener{
 
         name = findViewById(R.id.Editname);
         email = findViewById(R.id.Editcorreo);
-        tel = findViewById(R.id.EditTelefono);
+
         password = findViewById(R.id.EditPassword);
         confirmPassword = findViewById(R.id.EditPassword2);
         signUp = findViewById(R.id.bttSingUp);
@@ -68,7 +67,7 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener{
 
             case R.id.bttSingUp:
 
-                if( name.getText().toString().equals("") || email.getText().toString().equals("") || tel.getText().toString().equals("") ||  password.getText().toString().equals("")|| confirmPassword.getText().toString().equals("")){
+                if( name.getText().toString().equals("") || email.getText().toString().equals("")  ||  password.getText().toString().equals("")|| confirmPassword.getText().toString().equals("")){
 
                     Toast.makeText(this,"Debe llenar todos los campos",Toast.LENGTH_LONG).show();
 
@@ -89,7 +88,6 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener{
                                                     id,
                                                     name.getText().toString(),
                                                     email.getText().toString(),
-                                                    tel.getText().toString(),
                                                     password.getText().toString()
 
                                             );
@@ -100,9 +98,22 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener{
 
                                                         if (taskdb.isSuccessful()) {
 
-                                                            Intent o = new Intent(this, MainActivity.class);
-                                                            startActivity(o);
-                                                            finish();
+                                                            auth.getCurrentUser().sendEmailVerification().addOnCompleteListener(
+
+                                                                    verif->{
+
+                                                                        if(verif.isSuccessful()){
+                                                                            Toast.makeText(this,"Verifique el correo",Toast.LENGTH_LONG).show();
+                                                                            auth.signOut();
+                                                                            Intent o = new Intent(this, Login.class);
+                                                                            startActivity(o);
+                                                                            finish();
+
+                                                                        }
+
+                                                                    }
+                                                            );
+
 
                                                         }
                                                     }

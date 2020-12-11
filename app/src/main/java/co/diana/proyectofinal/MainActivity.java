@@ -7,6 +7,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -18,10 +20,15 @@ import com.google.firebase.database.ValueEventListener;
 import co.diana.proyectofinal.Clases.User;
 import co.diana.proyectofinal.pantallas.Inicio;
 import co.diana.proyectofinal.pantallas.Servicios;
+import co.diana.proyectofinal.pantallas.donacionesRecogidas;
+import co.diana.proyectofinal.pantallas.intro;
+import co.diana.proyectofinal.pantallas.notificaciones;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
     private ConstraintLayout Donaciones, servicio;
+    private ImageView servicioButton, donacionButton, recogerButton, perfilButton;
+    private ImageButton notificacionButton;
     private FirebaseDatabase db;
     private FirebaseAuth auth;
     private String id;
@@ -52,6 +59,17 @@ public class MainActivity extends AppCompatActivity {
 
             Donaciones=findViewById(R.id.Donaciones);
             servicio = findViewById(R.id.Servicios);
+            servicioButton = findViewById(R.id.serviciobutton);
+            donacionButton = findViewById(R.id.donacionbutton);
+            recogerButton = findViewById(R.id.recolectarbutton);
+            perfilButton = findViewById(R.id.perfilbutton);
+            notificacionButton = findViewById(R.id.notificacionButton);
+
+            servicioButton.setOnClickListener(this);
+            donacionButton.setOnClickListener(this);
+            recogerButton.setOnClickListener(this);
+            perfilButton.setOnClickListener(this);
+
             id = auth.getCurrentUser().getUid();
 
             Donaciones.setOnClickListener(
@@ -70,6 +88,15 @@ public class MainActivity extends AppCompatActivity {
                     }
             );
 
+            notificacionButton.setOnClickListener(
+                    (v)->{
+
+                        Intent n= new Intent(this, notificaciones.class);
+                        startActivity(n);
+
+                    }
+            );
+
             loadDataUser();
 
 
@@ -80,7 +107,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void goToLgin() {
 
-        Intent i = new Intent(this, Inicio.class);
+        Intent i = new Intent(this, intro.class);
         startActivity(i);
         finish();
     }
@@ -98,9 +125,11 @@ public class MainActivity extends AppCompatActivity {
 
                             User user = snapshot.getValue(User.class);
                             String name = user.getNombre();
+                            String correo = user.getCorreo();
                             SharedPreferences pre = getSharedPreferences("Casillero", Context.MODE_PRIVATE);
                             pre.edit().putString("idUser",id).apply();
                             pre.edit().putString("nameUser",name).apply();
+                            pre.edit().putString("correo",correo).apply();
 
                         }
 
@@ -114,4 +143,39 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()){
+
+            case R.id.serviciobutton:
+
+                Intent s = new Intent(this,Servicios.class);
+                startActivity(s);
+                finish();
+
+                break;
+
+            case R.id.donacionbutton:
+
+                Intent d = new Intent(this, Pantalladiferentesdonaciones.class);
+                startActivity(d);
+                finish();
+                break;
+
+            case R.id.recolectarbutton:
+
+                Intent r = new Intent(this, donacionesRecogidas.class);
+                startActivity(r);
+                finish();
+                break;
+
+            case R.id.perfilbutton:
+
+                Intent p = new Intent(this, pantallausuario.class);
+                startActivity(p);
+                finish();
+                break;
+
+        }
+    }
 }

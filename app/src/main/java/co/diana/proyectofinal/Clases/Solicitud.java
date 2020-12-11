@@ -3,6 +3,7 @@ package co.diana.proyectofinal.Clases;
 public class Solicitud {
 
     String nombreTrabajador;
+    String telefono;
     String idTrabajador;
     String tipoServicio;
     String idUsuario;
@@ -13,8 +14,9 @@ public class Solicitud {
     String horas;
     int pago;
 
-    public Solicitud(String nombreTrabajador, String idTrabajador, String tipoServicio, String idUsuario, String nombreUsuario, String direccion, String fecha, String horaLlegada, String horas, int pago) {
+    public Solicitud(String nombreTrabajador, String telefono, String idTrabajador, String tipoServicio, String idUsuario, String nombreUsuario, String direccion, String fecha, String horaLlegada, String horas, int pago) {
         this.nombreTrabajador = nombreTrabajador;
+        this.telefono = telefono;
         this.idTrabajador = idTrabajador;
         this.tipoServicio = tipoServicio;
         this.idUsuario = idUsuario;
@@ -27,6 +29,14 @@ public class Solicitud {
     }
 
     public Solicitud() {
+    }
+
+    public String getTelefono() {
+        return telefono;
+    }
+
+    public void setTelefono(String telefono) {
+        this.telefono = telefono;
     }
 
     public String getNombreTrabajador() {

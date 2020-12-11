@@ -5,14 +5,12 @@ public class User {
     String nombre;
     String correo;
     String password;
-    String telefono;
     String id;
 
-    public User(String id, String nombre, String correo, String telefono, String password ) {
+    public User(String id, String nombre, String correo, String password ) {
         this.id = id;
         this.nombre = nombre;
         this.correo = correo;
-        this.telefono = telefono;
         this.password = password;
 
     }
@@ -36,13 +34,7 @@ public class User {
         this.password = password;
     }
 
-    public String getTelefono() {
-        return telefono;
-    }
 
-    public void setTelefono(String telefono) {
-        this.telefono = telefono;
-    }
 
     public String getNombre() {
         return nombre;

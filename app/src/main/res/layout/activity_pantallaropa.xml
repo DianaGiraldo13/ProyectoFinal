@@ -6,6 +6,71 @@
     android:layout_height="match_parent"
     tools:context=".Pantallaropa">
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="0dp"
+        android:layout_height="80dp"
+        android:background="#F1F1F1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ImageView
+            android:id="@+id/donacionbutton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="34dp"
+            android:layout_marginLeft="34dp"
+            android:layout_marginTop="15dp"
+            app:layout_constraintStart_toEndOf="@+id/serviciobutton"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/donarcolor" />
+
+        <ImageView
+            android:id="@+id/homeButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="15dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/homestrok" />
+
+        <ImageView
+            android:id="@+id/perfilbutton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginRight="30dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/perfilstrok" />
+
+        <ImageView
+            android:id="@+id/recolectarbutton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="34dp"
+            android:layout_marginLeft="34dp"
+            android:layout_marginTop="15dp"
+            app:layout_constraintStart_toEndOf="@+id/donacionbutton"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/recolectastrok" />
+
+        <ImageView
+            android:id="@+id/serviciobutton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="34dp"
+            android:layout_marginLeft="34dp"
+            android:layout_marginTop="15dp"
+            app:layout_constraintStart_toEndOf="@+id/homeButton"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/serviciostrok" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
     <Button
         android:id="@+id/Donar"
         android:layout_width="350dp"
@@ -25,15 +90,13 @@
         android:id="@+id/checkBox4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginLeft="10dp"
+        android:layout_marginStart="45dp"
+        android:layout_marginLeft="45dp"
         android:layout_marginTop="20dp"
-        android:layout_marginEnd="255dp"
-        android:layout_marginRight="255dp"
         android:text="Niño"
         android:textColor="#08596C"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.484"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/checkBox3" />
 
@@ -47,7 +110,8 @@
         android:background="@drawable/cuadritodonar"
         android:ems="10"
         android:inputType="textPersonName"
-        android:padding="10dp"
+        android:paddingLeft="10dp"
+        android:textColor="#08596C"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toEndOf="@+id/checkBox1"
@@ -57,15 +121,13 @@
         android:id="@+id/checkBox3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginLeft="10dp"
+        android:layout_marginStart="45dp"
+        android:layout_marginLeft="45dp"
         android:layout_marginTop="20dp"
-        android:layout_marginEnd="235dp"
-        android:layout_marginRight="235dp"
         android:text="Hombre"
         android:textColor="#08596C"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.48"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/checkBox2" />
 
@@ -79,7 +141,8 @@
         android:background="@drawable/cuadritodonar"
         android:ems="10"
         android:inputType="textPersonName"
-        android:padding="10dp"
+        android:paddingLeft="10dp"
+        android:textColor="#08596C"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toEndOf="@+id/checkBox1"
@@ -89,15 +152,13 @@
         android:id="@+id/checkBox2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="5dp"
-        android:layout_marginLeft="5dp"
+        android:layout_marginStart="45dp"
+        android:layout_marginLeft="45dp"
         android:layout_marginTop="20dp"
-        android:layout_marginEnd="235dp"
-        android:layout_marginRight="235dp"
         android:text="Niña"
         android:textColor="#08596C"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.4"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/checkBox1" />
 
@@ -111,7 +172,8 @@
         android:background="@drawable/cuadritodonar"
         android:ems="10"
         android:inputType="textPersonName"
-        android:padding="10dp"
+        android:paddingLeft="10dp"
+        android:textColor="#08596C"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.49"
         app:layout_constraintStart_toEndOf="@+id/checkBox1"
@@ -127,7 +189,8 @@
         android:background="@drawable/cuadritodonar"
         android:ems="10"
         android:inputType="textPersonName"
-        android:padding="10dp"
+        android:paddingLeft="10dp"
+        android:textColor="#08596C"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/checkBox1"
         app:layout_constraintTop_toBottomOf="@+id/textView33" />
@@ -154,15 +217,15 @@
         android:id="@+id/textView32"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="45dp"
+        android:layout_marginLeft="45dp"
         android:layout_marginTop="30dp"
-        android:layout_marginEnd="190dp"
-        android:layout_marginRight="190dp"
         android:text="Tipo de ropa"
         android:textColor="#08596C"
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.33"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView28" />
 
@@ -213,15 +276,13 @@
         android:id="@+id/checkBox1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="5dp"
-        android:layout_marginLeft="5dp"
+        android:layout_marginStart="45dp"
+        android:layout_marginLeft="45dp"
         android:layout_marginTop="20dp"
-        android:layout_marginEnd="250dp"
-        android:layout_marginRight="250dp"
         android:text="Mujer"
         android:textColor="#08596C"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.49"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView32" />
 </androidx.constraintlayout.widget.ConstraintLayout>

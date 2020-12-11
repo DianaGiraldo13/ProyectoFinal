@@ -43,11 +43,10 @@
         app:layout_constraintVertical_bias="0.95" />
 
 
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="25dp">
+        app:layout_constraintTop_toTopOf="parent">
 
         <HorizontalScrollView
             android:id="@+id/horizontalScrollView"
@@ -58,46 +57,233 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="horizontal">
+
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
-                </androidx.constraintlayout.widget.ConstraintLayout>
-                <ImageView
-                    android:id="@+id/imageView28"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    app:srcCompat="@drawable/donar" />
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-                    <ImageView
-                        android:id="@+id/imageView20"
-                        android:layout_width="wrap_content"
+                    <TextView
+                        android:id="@+id/textView39"
+                        android:layout_width="261dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        app:srcCompat="@drawable/recolet" />
+                        android:layout_marginBottom="53dp"
+                        android:text="Puedes realizar donaciones de alimentos, dinero, ropa y articulos de aseo personal."
+                        android:textColor="#08596C"
+                        app:layout_constraintBottom_toTopOf="@+id/button11"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent" />
 
                     <TextView
                         android:id="@+id/textView36"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="TextView" />
+                        android:layout_marginBottom="18dp"
+                        android:text="Dona"
+                        android:textColor="#55C595"
+                        android:textSize="34sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toTopOf="@+id/textView39"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.498"
+                        app:layout_constraintStart_toStartOf="parent" />
 
+                    <ImageView
+                        android:id="@+id/imageView28"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/donar" />
+
+                    <Button
+                        android:id="@+id/button11"
+                        android:layout_width="10dp"
+                        android:layout_height="10dp"
+                        android:layout_marginStart="185dp"
+                        android:layout_marginLeft="185dp"
+                        android:layout_marginBottom="137dp"
+                        android:background="@drawable/circuloverde"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent" />
+
+                    <Button
+                        android:id="@+id/button12"
+                        android:layout_width="10dp"
+                        android:layout_height="10dp"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginRight="8dp"
+                        android:layout_marginBottom="137dp"
+                        android:background="@drawable/circulo"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/button13"
+                        app:layout_constraintStart_toEndOf="@+id/button11" />
+
+                    <Button
+                        android:id="@+id/button13"
+                        android:layout_width="10dp"
+                        android:layout_height="10dp"
+                        android:layout_marginEnd="185dp"
+                        android:layout_marginRight="185dp"
+                        android:layout_marginBottom="137dp"
+                        android:background="@drawable/circulo"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
-
                     android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/textView3"
+                        android:layout_width="261dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="53dp"
+                        android:text="No te preocupes si no sabes donde llevar la donación, nosotros vamos por ella."
+                        android:textColor="#08596C"
+                        app:layout_constraintBottom_toTopOf="@+id/button1"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent" />
+
+                    <TextView
+                        android:id="@+id/textView33"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="18dp"
+                        android:text="Recogemos tu donación"
+                        android:textColor="#55C595"
+                        android:textSize="34sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toTopOf="@+id/textView3"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.498"
+                        app:layout_constraintStart_toStartOf="parent" />
+
                     <ImageView
-                        android:id="@+id/imageView27"
+                        android:id="@+id/imageView2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        app:srcCompat="@drawable/contrata" />
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/recogerdonacion" />
 
+                    <Button
+                        android:id="@+id/button1"
+                        android:layout_width="10dp"
+                        android:layout_height="10dp"
+                        android:layout_marginStart="185dp"
+                        android:layout_marginLeft="185dp"
+                        android:layout_marginBottom="137dp"
+                        android:background="@drawable/circulo"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent" />
+
+                    <Button
+                        android:id="@+id/button15"
+                        android:layout_width="10dp"
+                        android:layout_height="10dp"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginRight="8dp"
+                        android:layout_marginBottom="137dp"
+                        android:background="@drawable/circuloverde"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/button14"
+                        app:layout_constraintStart_toEndOf="@+id/button1" />
+
+                    <Button
+                        android:id="@+id/button14"
+                        android:layout_width="10dp"
+                        android:layout_height="10dp"
+                        android:layout_marginEnd="185dp"
+                        android:layout_marginRight="185dp"
+                        android:layout_marginBottom="137dp"
+                        android:background="@drawable/circulo"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/textView30"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="18dp"
+                        android:text="Contrata"
+                        android:textColor="#55C595"
+                        android:textSize="34sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toTopOf="@+id/textView2"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.498"
+                        app:layout_constraintStart_toStartOf="parent" />
+
+                    <TextView
+                        android:id="@+id/textView2"
+                        android:layout_width="261dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="53dp"
+                        android:text="Contamos con más de 4000 empleados que estan dispuestos a ayudarte"
+                        android:textColor="#08596C"
+                        app:layout_constraintBottom_toTopOf="@+id/button6"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent" />
+
+                    <Button
+                        android:id="@+id/button6"
+                        android:layout_width="10dp"
+                        android:layout_height="10dp"
+                        android:layout_marginStart="185dp"
+                        android:layout_marginLeft="185dp"
+                        android:layout_marginBottom="137dp"
+                        android:background="@drawable/circulo"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent" />
+
+                    <Button
+                        android:id="@+id/button7"
+                        android:layout_width="10dp"
+                        android:layout_height="10dp"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginRight="8dp"
+                        android:layout_marginBottom="137dp"
+                        android:background="@drawable/circulo"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/button23"
+                        app:layout_constraintStart_toEndOf="@+id/button6" />
+
+                    <Button
+                        android:id="@+id/button23"
+                        android:layout_width="10dp"
+                        android:layout_height="10dp"
+                        android:layout_marginEnd="185dp"
+                        android:layout_marginRight="185dp"
+                        android:layout_marginBottom="137dp"
+                        android:background="@drawable/circuloverde"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent" />
+
+                    <ImageView
+                        android:id="@+id/imageView6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/servicioimagen" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
             </LinearLayout>

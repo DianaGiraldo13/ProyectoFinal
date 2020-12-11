@@ -19,7 +19,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener{
 
     private EditText email;
     private EditText password;
-    private TextView signUp;
+    private TextView signUp,forgotPassLink;
     private Button bttLogin;
     private FirebaseAuth auth;
     private FirebaseDatabase db;
@@ -33,12 +33,14 @@ public class Login extends AppCompatActivity implements View.OnClickListener{
         password = findViewById(R.id.passwordEdit);
         bttLogin = findViewById(R.id.bttLogin);
         signUp = findViewById(R.id.goSignUp);
+        forgotPassLink = findViewById(R.id.olvideContrasena);
 
         auth = FirebaseAuth.getInstance();
         db = FirebaseDatabase.getInstance();
 
         bttLogin.setOnClickListener(this);
         signUp.setOnClickListener(this);
+        forgotPassLink.setOnClickListener(this);
 
 
     }
@@ -72,12 +74,18 @@ public class Login extends AppCompatActivity implements View.OnClickListener{
 
                                         if (task.isSuccessful()) {
 
-                                            String id = auth.getCurrentUser().getUid();
+                                            if(auth.getCurrentUser().isEmailVerified()){
 
-                                            Intent intent = new Intent(this, MainActivity.class);
-                                            startActivity(intent);
+                                                Intent intent = new Intent(this, MainActivity.class);
+                                                startActivity(intent);
+                                                finish();
+                                            }else{
 
-                                            finish();
+                                                Toast.makeText(this, "Tiene que verificar su correo",Toast.LENGTH_LONG).show();
+                                                auth.signOut();
+
+                                            }
+
                                         } else {
                                             Toast.makeText(this, task.getException().getMessage(), Toast.LENGTH_LONG).show();
                                         }
@@ -86,6 +94,15 @@ public class Login extends AppCompatActivity implements View.OnClickListener{
 
                             );
                 }
+
+                break;
+
+            case R.id.olvideContrasena:
+
+                Intent next = new Intent(this,cambioContrasenna.class);
+                startActivity(next);
+
+
 
                 break;
         }

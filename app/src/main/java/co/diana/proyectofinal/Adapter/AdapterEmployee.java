@@ -75,6 +75,7 @@ public class AdapterEmployee extends BaseAdapter {
         String id = em.getId();
         int price = em.getCobro();
         String servicio = em.getCategoria();
+        String tel = em.getTelefono();
 
 
         button.setOnClickListener(
@@ -85,6 +86,7 @@ public class AdapterEmployee extends BaseAdapter {
                     pre.edit().putInt("price",price).apply();
                     pre.edit().putString("idEmployee",id).apply();
                     pre.edit().putString("servicio", servicio).apply();
+                    pre.edit().putString("telEmployee",tel).apply();
 
 
                     Intent info = new Intent(list.getContext(),InfoEmployee.class);

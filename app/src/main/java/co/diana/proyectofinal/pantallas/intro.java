@@ -1,10 +1,11 @@
-package co.diana.proyectofinal;
+package co.diana.proyectofinal.pantallas;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
 
+import co.diana.proyectofinal.R;
 import co.diana.proyectofinal.pantallas.Inicio;
 
 public class intro extends AppCompatActivity {

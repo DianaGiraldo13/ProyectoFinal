@@ -5,15 +5,21 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
-public class Pantalladonar extends AppCompatActivity {
+import co.diana.proyectofinal.pantallas.Servicios;
+import co.diana.proyectofinal.pantallas.donacionesRecogidas;
+
+public class Pantalladonar extends AppCompatActivity implements View.OnClickListener{
 
 
     private EditText editTextmonto;
     private Button Donar;
+    private ImageView servicioButton, recogerButton, perfilButton, homeButton;
     Intent intent;
 
     @Override
@@ -23,6 +29,17 @@ public class Pantalladonar extends AppCompatActivity {
 
         Donar=findViewById(R.id.Donar);
         editTextmonto=findViewById(R.id.editTextmonto);
+
+        servicioButton = findViewById(R.id.serviciobutton);
+        recogerButton = findViewById(R.id.recolectarbutton);
+        perfilButton = findViewById(R.id.perfilbutton);
+        homeButton = findViewById(R.id.homeButton);
+
+        servicioButton.setOnClickListener(this);
+        recogerButton.setOnClickListener(this);
+        perfilButton.setOnClickListener(this);
+        homeButton.setOnClickListener(this);
+
         intent=getIntent();
         String tipo=intent.getStringExtra("tipo");
         Log.e("TAG", tipo );
@@ -46,6 +63,46 @@ public class Pantalladonar extends AppCompatActivity {
                 }
         );
 
+
+    }
+
+    @Override
+    public void onClick(View view) {
+
+        switch (view.getId()){
+
+            case R.id.homeButton:
+
+                Intent h = new Intent(this, MainActivity.class);
+                startActivity(h);
+                finish();
+
+                break;
+
+            case R.id.serviciobutton:
+
+                Intent s = new Intent(this, Servicios.class);
+                startActivity(s);
+                finish();
+
+                break;
+
+
+            case R.id.recolectarbutton:
+
+                Intent r = new Intent(this, donacionesRecogidas.class);
+                startActivity(r);
+                finish();
+                break;
+
+            case R.id.perfilbutton:
+
+                Intent p = new Intent(this, pantallausuario.class);
+                startActivity(p);
+                finish();
+                break;
+
+        }
 
     }
 }
